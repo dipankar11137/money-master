@@ -34,8 +34,8 @@
 
                     <!-- income  -->
                     <div class="col col-sm-12  shadow-lg input-backgroundColor">
-                        <div class="card mt-5 shadow-lg">
-                            <div class="w-75   align-self-center mt-5">
+                        <div class="card  mt-3 shadow-lg">
+                            <div class="w-75   align-self-center mt-3">
                                 <div>
                                     <h3 class="text-center my-3 
                                 fw-bold">Income</h3>
@@ -44,17 +44,21 @@
                                             class="input-backgroundColor  w-50 text-center p-2" name=""
                                             placeholder="Enter your income"></h4>
                                 </div>
+                                <!-- error  -->
+                                <h4 id="error1" class="text-danger text-center fw-bold"></h4>
 
                                 <!-- Expenses -->
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <h3 class="text-center my-3 fw-bold">Expenses</h3>
-                                    <h4>Food : <input id="food" class="input-backgroundColor fw-bold w-50 text-center"
-                                            name=""></h4>
-                                    <h4>Rent : <input id="rent" class="input-backgroundColor fw-bold w-50 text-center"
-                                            name=""></h4>
+                                    <h4>Food : <input id="food"
+                                            class="input-backgroundColor rounded p-2 w-50 text-center" name=""
+                                            placeholder="Expenses for Food"></h4>
+                                    <h4>Rent : <input id="rent"
+                                            class="input-backgroundColor p-2 rounded w-50 text-center" name=""
+                                            placeholder="Expenses for Rent"></h4>
                                     <h4>Clothes : <input id="clothes"
-                                            class="input-backgroundColor fw-bold w-50 text-center" type="number"
-                                            name=""></h4>
+                                            class="input-backgroundColor p-2 rounded w-50 text-center" name=""
+                                            placeholder="Expenses for Clothes"></h4>
 
                                     <button id="calculate-button" class="btn btn-primary text-white fw-bold fs-4 my-2 "
                                         type="submit">Calculate</button>
@@ -66,13 +70,14 @@
                                     <h4>Balance : <span id="balance">00</span></h4>
                                     <!-- save -->
                                     <h4>Save : <input id="save-amount"
-                                            class="input-backgroundColor fw-bold w-50 text-center" name="">
+                                            class="input-backgroundColor p-2 rounded w-50 text-center" name=""
+                                            placeholder="Percentage">
                                         %
                                         <button id="save-button" class="btn btn-primary fw-bold fs-5">Save</button>
                                     </h4>
                                 </div>
                                 <!-- error  -->
-                                <h2 id="error" class="text-danger  fw-bold"></h2>
+                                <h2 id="error2" class="text-danger  fw-bold"></h2>
                                 <!-- Saving ammount -->
                                 <div class="mt-4 mb-5">
                                     <h3>Saving Amount : <span id="saiving-amount">00</span></h3>

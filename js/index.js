@@ -6,17 +6,7 @@ function getValue(inputValue) {
     const cost = parseFloat(costText);
     costField.value = '';
     return cost;
-    // }
-    // else {
-    //     return 'enter positive number';
-    // }
-
 }
-// claculate amount 
-/* function calculateTaka(value1, value2, value3) {
-    const totalExpenses = getValue(value1) + getValue(value2) + getValue(value3);
-    return totalExpenses;
-} */
 // value set 
 function setAmount(oldAmount, updateAmount) {
     document.getElementById(oldAmount).innerText = updateAmount;
@@ -34,18 +24,47 @@ document.getElementById('calculate-button').addEventListener('click', function (
     const clothes = getValue('clothes');
     const rent = getValue('rent');
 
-    if (totalIncome >= 0 && food >= 0 && clothes >= 0 && rent >= 0) {
-        // const totalExpenses = calculateTaka('food', 'rent', 'clothes');
-        const totalExpenses = food + clothes + rent;
+    if (isNaN(totalIncome) || isNaN(food) || isNaN(clothes) || isNaN(rent)) {
 
-        setAmount('total-expenses', totalExpenses);
-        setAmount('balance', remainningCalculation(totalIncome, totalExpenses));
-        console.log('mama paice');
+        const message = "Can't input string value";
+
+        document.getElementById('error1').innerText = message;
+
     }
-    else {
-        const message = ' Less Money';
 
-        document.getElementById('error').innerText = message;
+    else {
+        document.getElementById('error1').innerText = '';
+
+        if (totalIncome > 0) {
+            document.getElementById('error1').innerText = '';
+            if (food >= 0 && clothes >= 0 && rent >= 0) {
+                const totalExpenses = food + clothes + rent;
+
+                setAmount('total-expenses', totalExpenses);
+                const balance = remainningCalculation(totalIncome, totalExpenses);
+
+                if (totalExpenses < totalIncome) {
+                    setAmount('balance', balance);
+                }
+                else {
+                    const message = 'You are more expenses ';
+
+                    document.getElementById('error1').innerText = message;
+                }
+
+
+            }
+            else {
+                const message = "Can't input Negative value";
+                document.getElementById('error1').innerText = message;
+            }
+        }
+        else {
+            const message = "Income isn't 0 or Less";
+            document.getElementById('error1').innerText = message;
+        }
+
+
     }
 
 });
@@ -59,26 +78,27 @@ document.getElementById('save-button').addEventListener('click', function () {
     const balance = parseFloat(document.getElementById('balance').innerText);
     const calculateParsent = (totalIncome2 * parsentes) / 100;
 
-    if (balance >= calculateParsent) {
-        setAmount('saiving-amount', calculateParsent);
+    if (isNaN(parsentes)) {
+        const message = "Can't input String";
 
-        // remaning Balance       
-        const remainingBalance = balance - calculateParsent;
-        setAmount('remaining-balance', remainingBalance);
-
-    } else {
-        const message = ' Less Money';
-
-        document.getElementById('error').innerText = message;
-
+        document.getElementById('error2').innerText = message;
     }
+    else {
+        if (balance >= calculateParsent) {
+            document.getElementById('error2').innerText = '';
+
+            setAmount('saiving-amount', calculateParsent);
+            // remaning Balance       
+            const remainingBalance = balance - calculateParsent;
+            setAmount('remaining-balance', remainingBalance);
+
+        } else {
+            const message = ' Less Money';
+
+            document.getElementById('error2').innerText = message;
+
+        }
+    }
+
 });
 
-/* const ki = 7;
-const ho = 'er';
-if (isNaN(ki) || isNaN(ho)) {
-    console.log('mama paice tomay');
-}
-else {
-    console.log(' tomay');
-} */
