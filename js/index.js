@@ -13,27 +13,30 @@ function calculateTaka(value1, value2, value3) {
 function setAmount(oldAmount, updateAmount) {
     document.getElementById(oldAmount).innerText = updateAmount;
 }
-
+// 
+function remainningCalculation(input1, input2) {
+    return input1 - input2;
+}
+// calculate button
 document.getElementById('calculate-button').addEventListener('click', function () {
     const totalIncome = getValue('total-income');
 
     const totalExpenses = calculateTaka('food', 'rent', 'clothes');
-    const balacne = totalIncome - totalExpenses;
 
     setAmount('total-expenses', totalExpenses);
-    setAmount('balance', balacne);
+    setAmount('balance', remainningCalculation(totalIncome, totalExpenses));
 
+});
 
+// save button 
+document.getElementById('save-button').addEventListener('click', function () {
 
+    const save = getValue('save-amount');
 
+    balacne = parseFloat(document.getElementById('balance').innerText);
 
+    savingAmount = balacne / save;
+    setAmount('saiving-amount', savingAmount);
 
-
-    // calculateTaka();
-    /* foodCost = getValue('food');
-    rentCost = getValue('rent');
-    clothesCost = getValue('clothes');
-    console.log(foodCost);
-    console.log(rentCost);
-    console.log(clothesCost); */
+    setAmount('remaining-balance', remainningCalculation(balacne, savingAmount));
 });
