@@ -11,6 +11,8 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- css add  -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- log add  -->
+    <link rel="icon" href="images/cash-logo.jpg" type="image/x-icon">
 </head>
 
 <body>
@@ -38,21 +40,23 @@
                                     <h3 class="text-center my-3 
                                 fw-bold">Income</h3>
                                     <!-- income -->
-                                    <h4>Income: <input class="input-backgroundColor fw-bold w-50 text-center"
-                                            type="number" name="" id=""></h4>
+                                    <h4>Income: <input id="total-income"
+                                            class="input-backgroundColor  w-50 text-center p-2" name=""
+                                            placeholder="Enter your income"></h4>
                                 </div>
 
                                 <!-- Expenses -->
                                 <div class="mt-4">
                                     <h3 class="text-center my-3 fw-bold">Expenses</h3>
-                                    <h4>Food : <input class="input-backgroundColor fw-bold w-50 text-center"
-                                            type="number" name="" id=""></h4>
-                                    <h4>Rent : <input class="input-backgroundColor fw-bold w-50 text-center"
-                                            type="number" name="" id=""></h4>
-                                    <h4>Clothes : <input class="input-backgroundColor fw-bold w-50 text-center"
-                                            type="number" name="" id=""></h4>
+                                    <h4>Food : <input id="food" class="input-backgroundColor fw-bold w-50 text-center"
+                                            name=""></h4>
+                                    <h4>Rent : <input id="rent" class="input-backgroundColor fw-bold w-50 text-center"
+                                            name=""></h4>
+                                    <h4>Clothes : <input id="clothes"
+                                            class="input-backgroundColor fw-bold w-50 text-center" type="number"
+                                            name=""></h4>
 
-                                    <button class="btn btn-primary text-white fw-bold fs-4 my-2 "
+                                    <button id="calculate-button" class="btn btn-primary text-white fw-bold fs-4 my-2 "
                                         type="submit">Calculate</button>
                                 </div>
 
@@ -60,8 +64,8 @@
                                 <div class="mt-4">
                                     <h4>Total Expenses : <span>5500</span></h4>
                                     <h4>Balance : <span>5500</span></h4>
-                                    <h4>Save : <input class="input-backgroundColor fw-bold w-50 text-center"
-                                            type="number" name="" id="">
+                                    <h4>Save : <input class="input-backgroundColor fw-bold w-50 text-center" name=""
+                                            id="">
                                         %
                                         <button class="btn btn-primary fw-bold fs-5">Save</button>
                                     </h4>
@@ -90,6 +94,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+
+    <script src="js/index.js"></script>
 </body>
 
 </html>
